@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | [Votre Prénom] [Votre Nom] - Développeur d'Applications</title>
-    <meta name="description" content="Portfolio de [Votre Prénom] [Votre Nom], développeur d'applications en licence. Découvrez mes projets, compétences et parcours.">
+    <title>Portfolio | Ishak Kouici - Développeur d'Applications</title>
+    <meta name="description" content="Portfolio de Ishak Kouici, développeur d'applications en Master. Découvrez mes projets, compétences et parcours.">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -215,7 +215,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#"><span>&lt;</span>VotreNom<span>/&gt;</span></a>
+            <a class="navbar-brand" href="#"><span>&lt;</span>Kouici Ishak<span>/&gt;</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -243,9 +243,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="hero-title mb-4">Bonjour, je suis <span>[Votre Prénom]</span></h1>
+                    <h1 class="hero-title mb-4">Bonjour, je suis <span>Ishak Kouici</span></h1>
                     <h2 class="h1 hero-title mb-4">Développeur d'Applications</h2>
-                    <p class="lead mb-4">Étudiant en licence d'informatique passionné par le développement d'applications mobiles et web. Je crée des solutions innovantes et performantes.</p>
+                    <p class="lead mb-4">Étudiant en Master conception, développement passionné, je crée des solutions innovantes et performantes.</p>
                     <div class="d-flex gap-3">
                         <a href="#projects" class="btn btn-primary btn-lg px-4">Voir mes projets</a>
                         <a href="#contact" class="btn btn-outline-primary btn-lg px-4">Me contacter</a>
@@ -276,7 +276,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h3 class="h2 mb-4">Développeur d'applications passionné</h3>
-                    <p class="mb-4">Je suis actuellement en licence d'informatique, spécialisé dans le développement d'applications. Mon parcours académique m'a permis d'acquérir des bases solides en algorithmique, programmation orientée objet et gestion de bases de données.</p>
+                    <p class="mb-4">Je suis actuellement en Master conception et développement d'applications, spécialisé dans le développement d'applications. Mon parcours académique m'a permis d'acquérir des bases solides en algorithmique, programmation orientée objet et gestion de bases de données.</p>
                     <p class="mb-4">Je me consacre à la création d'applications à la fois esthétiques et fonctionnelles, en mettant l'accent sur l'expérience utilisateur et les bonnes pratiques de développement.</p>
                     
                     <h4 class="h5 mb-3">Mes compétences techniques</h4>
