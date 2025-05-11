@@ -327,13 +327,13 @@
                              class="card-img-top project-img" 
                              alt="Application de gestion de tâches">
                         <div class="card-body d-flex flex-column">
-                            <h3 class="h5 card-title">TaskMaster</h3>
-                            <p class="card-text text-muted">Application mobile de gestion de tâches avec synchronisation cloud et rappels intelligents.</p>
+                            <h3 class="h5 card-title">E-commerce</h3>
+                            <p class="card-text text-muted">Une application e-commerce simple et efficace, conçue pour une expérience fluide sur mobile.</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
                                     <span class="tech-badge bg-primary text-white rounded-pill">Android</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Kotlin</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Firebase</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill">React Native</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill">Api</span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
@@ -355,13 +355,13 @@
                              class="card-img-top project-img" 
                              alt="Plateforme de recettes">
                         <div class="card-body d-flex flex-column">
-                            <h3 class="h5 card-title">ChefConnect</h3>
-                            <p class="card-text text-muted">Plateforme web et mobile de partage de recettes avec système de recommandation.</p>
+                            <h3 class="h5 card-title">ClasseSpace</h3>
+                            <p class="card-text text-muted">Plateforme web permettant à un établissement le suivi de l'année scolaire slon role.</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
-                                    <span class="tech-badge bg-primary text-white rounded-pill">React Native</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Node.js</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">MongoDB</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill">ASP . NET</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill">Mysql</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill">Razor</span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
@@ -387,9 +387,9 @@
                             <p class="card-text text-muted">Jeu éducatif pour enfants avec suivi des progrès et tableau de bord parental.</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Swift</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">ARKit</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Core Data</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill">PHP</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill">Mobile</span>
+                                    <span class="tech-badge bg-primary text-white rounded-pill"></span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
@@ -428,7 +428,7 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 mb-0">Email</h4>
-                                    <a href="mailto:votre@email.com" class="text-decoration-none">votre@email.com</a>
+                                    <a href="i.kouici@insta.fr" class="text-decoration-none">i.kouici@insta.fr</a>
                                 </div>
                             </div>
                             
@@ -438,7 +438,7 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 mb-0">Téléphone</h4>
-                                    <a href="tel:+33612345678" class="text-decoration-none">+33 6 12 34 56 78</a>
+                                    <a href="tel:+33612345678" class="text-decoration-none">+33 7 79 77 44 10</a>
                                 </div>
                             </div>
                             
@@ -448,7 +448,7 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 mb-0">Localisation</h4>
-                                    <p class="mb-0">[Votre Ville], France</p>
+                                    <p class="mb-0">Paris, France</p>
                                 </div>
                             </div>
                         </div>
