@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Ishak Kouici - Développeur d'Applications</title>
-    <meta name="description" content="Portfolio de Ishak Kouici, développeur d'applications en Master. Découvrez mes projets, compétences et parcours.">
+    <title>Portfolio | Ishak Kouici - Développeur Full Stack</title>
+    <meta name="description" content="Portfolio de Ishak Kouici, étudiant en Master Conception et Développement d'Applications. Découvrez mes projets, compétences et parcours.">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,16 +12,19 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #0d6efd;
-            --secondary-color: #0b5ed7;
-            --dark-color: #212529;
-            --light-color: #f8f9fa;
-            --accent-color: #ffc107;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --accent-color: #f59e0b;
             --font-main: 'Poppins', sans-serif;
             --font-code: 'Roboto Mono', monospace;
         }
@@ -30,9 +33,15 @@
             font-family: var(--font-main);
             background-color: var(--light-color);
             color: var(--dark-color);
+            scroll-behavior: smooth;
         }
         
         /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+        
         .navbar-brand {
             font-weight: 700;
             font-family: var(--font-code);
@@ -45,6 +54,7 @@
         .nav-link {
             position: relative;
             margin: 0 0.5rem;
+            font-weight: 500;
         }
         
         .nav-link::after {
@@ -58,14 +68,16 @@
             transition: width 0.3s;
         }
         
-        .nav-link:hover::after {
+        .nav-link:hover::after,
+        .nav-link.active::after {
             width: 100%;
         }
         
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+            padding-top: 80px;
         }
         
         .hero-title {
@@ -76,6 +88,18 @@
         
         .hero-title span {
             color: var(--primary-color);
+            position: relative;
+        }
+        
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: rgba(245, 158, 11, 0.3);
+            z-index: -1;
         }
         
         .hero-img {
@@ -83,18 +107,42 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             max-height: 500px;
             object-fit: cover;
+            border: 5px solid white;
         }
         
         /* Section Titles */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
         .section-title h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
         }
         
         .section-title p {
-            color: #6c757d;
+            color: #64748b;
             max-width: 600px;
+            margin: 0 auto;
         }
         
         /* About Section */
@@ -103,6 +151,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             max-height: 500px;
             object-fit: cover;
+            border: 5px solid white;
         }
         
         .skill-badge {
@@ -111,44 +160,70 @@
             padding: 0.5rem 0.75rem;
             display: inline-flex;
             align-items: center;
+            background-color: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         .skill-badge i {
             margin-right: 0.5rem;
+            color: var(--primary-color);
         }
         
         /* Projects Section */
+        .projects-section {
+            background-color: #f1f5f9;
+        }
+        
         .project-card {
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
             height: 100%;
+            overflow: hidden;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img-container {
+            height: 200px;
+            overflow: hidden;
         }
         
         .project-img {
-            height: 200px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.05);
         }
         
         .tech-badge {
             font-size: 0.75rem;
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
+            background-color: #e2e8f0;
+            color: #334155;
         }
         
         /* Contact Section */
         .contact-card {
             border-radius: 1rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: none;
         }
         
         .contact-icon {
             width: 50px;
             height: 50px;
-            background-color: rgba(13, 110, 253, 0.1);
+            background-color: rgba(37, 99, 235, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -161,10 +236,12 @@
         footer {
             background-color: var(--dark-color);
             color: white;
+            padding: 4rem 0 2rem;
         }
         
         .footer-title {
             font-family: var(--font-code);
+            margin-bottom: 1.5rem;
         }
         
         .footer-title span {
@@ -174,7 +251,7 @@
         .social-link {
             width: 40px;
             height: 40px;
-            background-color: #495057;
+            background-color: #334155;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -185,12 +262,11 @@
         
         .social-link:hover {
             background-color: var(--primary-color);
-            color: white;
             transform: translateY(-3px);
         }
         
         .footer-link {
-            color: #adb5bd;
+            color: #cbd5e1;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -208,14 +284,18 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .section {
+                padding: 4rem 0;
+            }
         }
     </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#"><span>&lt;</span>Kouici Ishak<span>/&gt;</span></a>
+            <a class="navbar-brand" href="#home"><span>&lt;</span>Ishak Kouici<span>/&gt;</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -243,17 +323,17 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="hero-title mb-4">Bonjour, je suis <span>Ishak Kouici</span></h1>
-                    <h2 class="h1 hero-title mb-4">Développeur d'Applications</h2>
-                    <p class="lead mb-4">Étudiant en Master conception, développement passionné, je crée des solutions innovantes et performantes.</p>
-                    <div class="d-flex gap-3">
+                    <h1 class="hero-title mb-4 animate__animated animate__fadeInDown">Bonjour, je suis <span>Ishak Kouici</span></h1>
+                    <h2 class="h1 hero-title mb-4 animate__animated animate__fadeInDown animate__delay-1s">Développeur Full Stack</h2>
+                    <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">Étudiant en Master Conception et Développement d'Applications, je crée des solutions innovantes et performantes avec une approche centrée sur l'utilisateur.</p>
+                    <div class="d-flex gap-3 animate__animated animate__fadeIn animate__delay-1s">
                         <a href="#projects" class="btn btn-primary btn-lg px-4">Voir mes projets</a>
                         <a href="#contact" class="btn btn-outline-primary btn-lg px-4">Me contacter</a>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-5 mt-lg-0">
-                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                         alt="Développeur d'applications" 
+                <div class="col-lg-6 mt-5 mt-lg-0 animate__animated animate__fadeIn animate__delay-2s">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Ishak Kouici - Développeur Full Stack" 
                          class="img-fluid hero-img">
                 </div>
             </div>
@@ -261,49 +341,55 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-5 my-5" id="about">
+    <section class="section" id="about">
         <div class="container">
-            <div class="section-title text-center mb-5">
+            <div class="section-title">
                 <h2>À propos de moi</h2>
-                <p class="mx-auto">Découvrez qui je suis, mes compétences et mon parcours académique</p>
+                <p>Découvrez mon parcours, mes compétences et ma passion pour le développement</p>
             </div>
             
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <img src="photo.jpg"
-                         alt="À propos" 
-                         class="img-fluid about-img">
+                         alt="Ishak Kouici - Développeur" 
+                         class="img-fluid about-img animate__animated animate__fadeInLeft">
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="h2 mb-4">Développeur d'applications passionné</h3>
-                    <p class="mb-4">Je suis actuellement en Master conception et développement d'applications. Mon parcours académique m'a permis d'acquérir des bases solides en algorithmique, programmation orientée objet et gestion de bases de données.</p>
-                    <p class="mb-4">Je me consacre à la création d'applications à la fois esthétiques et fonctionnelles, en mettant l'accent sur l'expérience utilisateur et les bonnes pratiques de développement.</p>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <h3 class="h2 mb-4">Passionné par le développement d'applications</h3>
+                    <p class="mb-4">Actuellement en Master Conception et Développement d'Applications, j'ai acquis une solide expertise en développement web et mobile, ainsi qu'en conception d'interfaces utilisateur intuitives.</p>
+                    <p class="mb-4">Mon approche combine rigueur technique et créativité pour concevoir des solutions qui répondent précisément aux besoins des utilisateurs tout en étant esthétiques et performantes.</p>
                     
-                    <h4 class="h5 mb-3">Mes compétences techniques</h4>
+                    <h4 class="h5 mb-3">Compétences techniques</h4>
                     <div class="d-flex flex-wrap">
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-filetype-java text-primary"></i> Java
+                        <span class="skill-badge">
+                            <i class="bi bi-filetype-java"></i> Java
                         </span>
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-phone text-primary"></i> Android
+                        <span class="skill-badge">
+                            <i class="bi bi-phone"></i> Android
                         </span>
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-apple text-primary"></i> Swift
+                        <span class="skill-badge">
+                            <i class="bi bi-filetype-js"></i> JavaScript
                         </span>
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-filetype-js text-primary"></i> JavaScript
+                        <span class="skill-badge">
+                            <i class="bi bi-filetype-html"></i> HTML/CSS
                         </span>
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-phone text-primary"></i> React Native
+                        <span class="skill-badge">
+                            <i class="bi bi-filetype-php"></i> PHP
                         </span>
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-database text-primary"></i> SQL
+                        <span class="skill-badge">
+                            <i class="bi bi-database"></i> SQL/NoSQL
                         </span>
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-git text-primary"></i> Git
+                        <span class="skill-badge">
+                            <i class="bi bi-git"></i> Git
                         </span>
-                        <span class="skill-badge bg-light rounded-pill">
-                            <i class="bi bi-filetype-py text-primary"></i> Python
+                        <span class="skill-badge">
+                            <i class="bi bi-bootstrap"></i> Bootstrap
+                        </span>
+                        <span class="skill-badge">
+                            <i class="bi bi-filetype-sql"></i> ASP.NET
+                        </span>
+                        <span class="skill-badge">
+                            <i class="bi bi-filetype-xml"></i> XML/JSON
                         </span>
                     </div>
                 </div>
@@ -312,35 +398,41 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="py-5 my-5 bg-light" id="projects">
+    <section class="section projects-section" id="projects">
         <div class="container">
-            <div class="section-title text-center mb-5">
+            <div class="section-title">
                 <h2>Mes projets</h2>
-                <p class="mx-auto">Découvrez une sélection de mes réalisations récentes</p>
+                <p>Une sélection de mes réalisations les plus significatives</p>
             </div>
             
             <div class="row g-4">
-                <!-- Projet 1 -->
+                <!-- Projet 1 - E-commerce -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="project-card card h-100 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                             class="card-img-top project-img" 
-                             alt="Application de gestion de tâches">
+                    <div class="project-card card h-100 animate__animated animate__fadeInUp">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 class="project-img" 
+                                 alt="Application E-commerce">
+                        </div>
                         <div class="card-body d-flex flex-column">
-                            <h3 class="h5 card-title">E-commerce</h3>
-                            <p class="card-text text-muted">Une application e-commerce simple et efficace, conçue pour une expérience fluide sur mobile.</p>
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h3 class="h5 card-title mb-0">Plateforme E-commerce</h3>
+                                <span class="badge bg-primary">2024</span>
+                            </div>
+                            <p class="card-text text-muted mb-4">Application mobile de commerce électronique avec système de paiement sécurisé, gestion de catalogue et suivi des commandes.</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Android</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">React Native</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Api</span>
+                                    <span class="badge tech-badge">React Native</span>
+                                    <span class="badge tech-badge">Node.js</span>
+                                    <span class="badge tech-badge">MongoDB</span>
+                                    <span class="badge tech-badge">Stripe API</span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Voir le projet
+                                        <i class="bi bi-eye me-2"></i> Détails
                                     </a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i> Code source
+                                        <i class="bi bi-github me-2"></i> Code
                                     </a>
                                 </div>
                             </div>
@@ -348,27 +440,33 @@
                     </div>
                 </div>
                 
-                <!-- Projet 2 -->
+                <!-- Projet 2 - ClasseSpace -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="project-card card h-100 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                             class="card-img-top project-img" 
-                             alt="Plateforme de recettes">
+                    <div class="project-card card h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 class="project-img" 
+                                 alt="Plateforme ClasseSpace">
+                        </div>
                         <div class="card-body d-flex flex-column">
-                            <h3 class="h5 card-title">ClasseSpace</h3>
-                            <p class="card-text text-muted">Plateforme web permettant à un établissement le suivi de l'année scolaire slon role.</p>
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h3 class="h5 card-title mb-0">ClasseSpace</h3>
+                                <span class="badge bg-primary">2025</span>
+                            </div>
+                            <p class="card-text text-muted mb-4">Plateforme de gestion scolaire complète avec espaces dédiés pour administrateurs, enseignants et étudiants, incluant gestion des notes, emplois du temps et ressources pédagogiques.</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
-                                    <span class="tech-badge bg-primary text-white rounded-pill">ASP . NET</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Mysql</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Razor</span>
+                                    <span class="badge tech-badge">ASP.NET Core</span>
+                                    <span class="badge tech-badge">MySQL</span>
+                                    <span class="badge tech-badge">Razor Pages</span>
+                                    <span class="badge tech-badge">Bootstrap</span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Voir le projet
+                                        <i class="bi bi-eye me-2"></i> Détails
                                     </a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i> Code source
+                                        <i class="bi bi-github me-2"></i> Code
                                     </a>
                                 </div>
                             </div>
@@ -376,27 +474,33 @@
                     </div>
                 </div>
                 
-                <!-- Projet 3 -->
+                <!-- Projet 3 - EduGame -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="project-card card h-100 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                             class="card-img-top project-img" 
-                             alt="Jeu éducatif">
+                    <div class="project-card card h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="project-img-container">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 class="project-img" 
+                                 alt="Application EduGame">
+                        </div>
                         <div class="card-body d-flex flex-column">
-                            <h3 class="h5 card-title">EduGame</h3>
-                            <p class="card-text text-muted">Jeu éducatif pour enfants avec suivi des progrès et tableau de bord parental.</p>
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h3 class="h5 card-title mb-0">EduGame</h3>
+                                <span class="badge bg-primary">2025</span>
+                            </div>
+                            <p class="card-text text-muted mb-4">Application éducative gamifiée pour enfants avec suivi des progrès, tableau de bord parental et contenus adaptatifs selon le niveau de l'enfant.</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
-                                    <span class="tech-badge bg-primary text-white rounded-pill">PHP</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill">Mobile</span>
-                                    <span class="tech-badge bg-primary text-white rounded-pill"></span>
+                                    <span class="badge tech-badge">Flutter</span>
+                                    <span class="badge tech-badge">Firebase</span>
+                                    <span class="badge tech-badge">Dart</span>
+                                    <span class="badge tech-badge">Algolia</span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Voir le projet
+                                        <i class="bi bi-eye me-2"></i> Détails
                                     </a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i> Code source
+                                        <i class="bi bi-github me-2"></i> Code
                                     </a>
                                 </div>
                             </div>
@@ -408,18 +512,18 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="py-5 my-5" id="contact">
+    <section class="section" id="contact">
         <div class="container">
-            <div class="section-title text-center mb-5">
+            <div class="section-title">
                 <h2>Contactez-moi</h2>
-                <p class="mx-auto">N'hésitez pas à me contacter pour des opportunités ou des collaborations</p>
+                <p>Disponible pour des opportunités de stage ou des collaborations</p>
             </div>
             
-            <div class="contact-card card border-0 shadow overflow-hidden">
+            <div class="contact-card card shadow overflow-hidden">
                 <div class="row g-0">
                     <div class="col-lg-6 bg-light p-4 p-lg-5">
-                        <h3 class="h2 mb-4">Parlons de votre projet</h3>
-                        <p class="mb-4">Je suis toujours ouvert à discuter de nouveaux projets, idées créatives ou opportunités de faire partie de vos visions.</p>
+                        <h3 class="h2 mb-4">Travaillons ensemble</h3>
+                        <p class="mb-4">Pour toute proposition, vous pouvez me contacter depuis ce formulaire.</p>
                         
                         <div class="mb-4">
                             <div class="d-flex align-items-center mb-3">
@@ -428,7 +532,7 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 mb-0">Email</h4>
-                                    <a href="i.kouici@insta.fr" class="text-decoration-none">i.kouici@insta.fr</a>
+                                    <a href="mailto:i.kouici@insta.fr" class="text-decoration-none">i.kouici@insta.fr</a>
                                 </div>
                             </div>
                             
@@ -438,7 +542,7 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 mb-0">Téléphone</h4>
-                                    <a href="tel:+33612345678" class="text-decoration-none">+33 7 79 77 44 10</a>
+                                    <a href="tel:+33779774410" class="text-decoration-none">+33 7 79 77 44 10</a>
                                 </div>
                             </div>
                             
@@ -454,38 +558,38 @@
                         </div>
                         
                         <div class="d-flex gap-3">
-                            <a href="#" class="social-link">
+                            <a href="https://github.com/votreprofil" target="_blank" class="social-link">
                                 <i class="bi bi-github"></i>
                             </a>
-                            <a href="#" class="social-link">
+                            <a href="https://linkedin.com/in/votreprofil" target="_blank" class="social-link">
                                 <i class="bi bi-linkedin"></i>
                             </a>
-                            <a href="#" class="social-link">
+                            <a href="https://twitter.com/votreprofil" target="_blank" class="social-link">
                                 <i class="bi bi-twitter"></i>
                             </a>
                         </div>
                     </div>
                     
                     <div class="col-lg-6 p-4 p-lg-5">
-                        <form>
+                        <form id="contactForm" method="POST">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nom complet</label>
-                                <input type="text" class="form-control" id="name" required>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="subject" class="form-label">Sujet</label>
-                                <input type="text" class="form-control" id="subject" required>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                             </div>
                             
                             <button type="submit" class="btn btn-primary px-4">Envoyer le message</button>
@@ -497,27 +601,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5">
+    <footer>
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <h3 class="footer-title h4 mb-4"><span>&lt;</span>VotreNom<span>/&gt;</span></h3>
-                    <p class="text-muted">Développeur d'applications passionné par la création de solutions innovantes et performantes.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="social-link">
+                    <h3 class="footer-title h4"><span>&lt;</span>Ishak Kouici<span>/&gt;</span></h3>
+                    <p class="text-muted mt-3">Développeur Full Stack passionné par la création de solutions innovantes et performantes.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="https://github.com/votreprofil" target="_blank" class="social-link">
                             <i class="bi bi-github"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://linkedin.com/in/votreprofil" target="_blank" class="social-link">
                             <i class="bi bi-linkedin"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://twitter.com/votreprofil" target="_blank" class="social-link">
                             <i class="bi bi-twitter"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="col-lg-2 col-md-4">
-                    <h4 class="h5 mb-4">Liens utiles</h4>
+                    <h4 class="h5 mb-4">Navigation</h4>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#home" class="footer-link">Accueil</a></li>
                         <li class="mb-2"><a href="#about" class="footer-link">À propos</a></li>
@@ -529,29 +633,22 @@
                 <div class="col-lg-2 col-md-4">
                     <h4 class="h5 mb-4">Compétences</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="footer-link">Mobile</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">Web</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">UI/UX</a></li>
-                        <li class="mb-2"><a href="#" class="footer-link">Bases de données</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Développement Mobile</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Développement Web</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">UI/UX Design</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Base de données</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-4 col-md-4">
-                    <h4 class="h5 mb-4">Newsletter</h4>
-                    <p class="text-muted mb-3">Abonnez-vous pour recevoir mes dernières actualités.</p>
-                    <form class="d-flex">
-                        <input type="email" class="form-control me-2" placeholder="Votre email">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-send"></i>
-                        </button>
-                    </form>
+                    <a href="#contact" class="btn btn-outline-light mt-2">Me contacter</a>
                 </div>
             </div>
             
             <hr class="my-4 bg-secondary">
             
             <div class="text-center text-muted">
-                <p class="mb-0">&copy; <?php echo date('Y'); ?> [Votre Prénom] [Votre Nom]. Tous droits réservés.</p>
+                <p class="mb-0">&copy; <?php echo date('Y'); ?> Ishak Kouici. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -560,23 +657,60 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Animation au défilement
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.hero-img, .about-img, .project-card, .contact-card');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementPosition < windowHeight - 100) {
-                        element.classList.add('animate__animated', 'animate__fadeInUp');
-                    }
-                });
-            };
+        // Active le scroll spy
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '.navbar'
+        });
+        
+        // Ajoute la classe active aux liens de navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function setActiveLink() {
+            const fromTop = window.scrollY + 100;
             
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Trigger on load
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', setActiveLink);
+        setActiveLink();
+        
+        // Animation au défilement
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.hero-img, .about-img, .project-card, .contact-card');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Déclenche au chargement
+        
+        // Gestion du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ici vous pourriez ajouter le code pour envoyer le formulaire
+            // Par exemple avec fetch() ou en le soumettant à un script PHP
+            
+            alert('Message envoyé avec succès ! Je vous répondrai dès que possible.');
+            this.reset();
         });
     </script>
 </body>
