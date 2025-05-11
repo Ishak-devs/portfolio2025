@@ -270,13 +270,13 @@
             
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                    <img src="photo.jpg"
                          alt="À propos" 
                          class="img-fluid about-img">
                 </div>
                 <div class="col-lg-6">
                     <h3 class="h2 mb-4">Développeur d'applications passionné</h3>
-                    <p class="mb-4">Je suis actuellement en Master conception et développement d'applications, spécialisé dans le développement d'applications. Mon parcours académique m'a permis d'acquérir des bases solides en algorithmique, programmation orientée objet et gestion de bases de données.</p>
+                    <p class="mb-4">Je suis actuellement en Master conception et développement d'applications. Mon parcours académique m'a permis d'acquérir des bases solides en algorithmique, programmation orientée objet et gestion de bases de données.</p>
                     <p class="mb-4">Je me consacre à la création d'applications à la fois esthétiques et fonctionnelles, en mettant l'accent sur l'expérience utilisateur et les bonnes pratiques de développement.</p>
                     
                     <h4 class="h5 mb-3">Mes compétences techniques</h4>
