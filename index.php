@@ -423,17 +423,14 @@
                             <div class="mt-auto">
                                 <div class="mb-3">
                                     <span class="badge tech-badge">React Native</span>
-                                    <span class="badge tech-badge">Node.js</span>
-                                    <span class="badge tech-badge">MongoDB</span>
-                                    <span class="badge tech-badge">Stripe API</span>
+                                    <span class="badge tech-badge">Mysql</span>
+                                    <span class="badge tech-badge">API base de données</span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Détails
+                                        <i class="bi bi-eye me-2"></i> Docker
                                     </a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i> Code
-                                    </a>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -463,10 +460,10 @@
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Détails
+                                        <i class="bi bi-eye me-2"></i> Docker
                                     </a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i> Code
+                                    <a href="https://projet-forum-1-pyvs.onrender.com" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
+                                        <i class="bi bi-github me-2"></i>
                                     </a>
                                 </div>
                             </div>
@@ -487,20 +484,21 @@
                                 <h3 class="h5 card-title mb-0">EduGame</h3>
                                 <span class="badge bg-primary">2025</span>
                             </div>
-                            <p class="card-text text-muted mb-4">Application éducative gamifiée pour enfants avec suivi des progrès, tableau de bord parental et contenus adaptatifs selon le niveau de l'enfant.</p>
+                            <p class="card-text text-muted mb-4">Jeux arcade en python !</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
-                                    <span class="badge tech-badge">Flutter</span>
-                                    <span class="badge tech-badge">Firebase</span>
-                                    <span class="badge tech-badge">Dart</span>
-                                    <span class="badge tech-badge">Algolia</span>
+                                    <span class="badge tech-badge">bootstrap</span>
+                                    <span class="badge tech-badge">Python</span>
                                 </div>
                                 <div class="d-flex gap-3">
                                     <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Détails
+                                        <i class="bi bi-eye me-2"></i> Docker
                                     </a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i> Code
+                                        <i class="bi bi-github me-2"></i> Pour tester cette application avec Docker : 
+                                        docker pull ishakdoocker/  
+                                        docker run -p 5000:5000 ishakdoocker/
+
                                     </a>
                                 </div>
                             </div>
@@ -516,7 +514,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Contactez-moi</h2>
-                <p>Disponible pour des opportunités de stage ou des collaborations</p>
+                <p>Disponible pour des opportunités.</p>
             </div>
             
             <div class="contact-card card shadow overflow-hidden">
