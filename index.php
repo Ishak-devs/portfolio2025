@@ -232,6 +232,28 @@
             font-size: 1.2rem;
         }
         
+        .email-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .email-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+        .email-btn i {
+            margin-right: 0.5rem;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark-color);
@@ -427,10 +449,9 @@
                                     <span class="badge tech-badge">API base de données</span>
                                 </div>
                                 <div class="d-flex gap-3">
-                                    <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Docker
+                                    <a href="https://github.com/luccsz95/e-commerce-projet" class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                                        <i class="bi bi-eye me-2"></i> Github
                                     </a>
-                                   
                                 </div>
                             </div>
                         </div>
@@ -459,46 +480,9 @@
                                     <span class="badge tech-badge">Bootstrap</span>
                                 </div>
                                 <div class="d-flex gap-3">
-                                    <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Docker
-                                    </a>
                                     <a href="https://projet-forum-1-pyvs.onrender.com" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Projet 3 - EduGame -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card card h-100 animate__animated animate__fadeInUp animate__delay-2s">
-                        <div class="project-img-container">
-                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                                 class="project-img" 
-                                 alt="Application EduGame">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h3 class="h5 card-title mb-0">EduGame</h3>
-                                <span class="badge bg-primary">2025</span>
-                            </div>
-                            <p class="card-text text-muted mb-4">Jeux arcade en python !</p>
-                            <div class="mt-auto">
-                                <div class="mb-3">
-                                    <span class="badge tech-badge">bootstrap</span>
-                                    <span class="badge tech-badge">Python</span>
-                                </div>
-                                <div class="d-flex gap-3">
-                                    <a href="#" class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                        <i class="bi bi-eye me-2"></i> Docker
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
-                                        <i class="bi bi-github me-2"></i> Pour tester cette application avec Docker : 
-                                        docker pull ishakdoocker/  
-                                        docker run -p 5000:5000 ishakdoocker/
-
+                                        <i class="bi bi-github me-2">Docker</i>
+                                        <p>projet encore en developpement !</p>
                                     </a>
                                 </div>
                             </div>
@@ -521,8 +505,16 @@
                 <div class="row g-0">
                     <div class="col-lg-6 bg-light p-4 p-lg-5">
                         <h3 class="h2 mb-4">Travaillons ensemble</h3>
-                        <p class="mb-4">Pour toute proposition, vous pouvez me contacter depuis ce formulaire.</p>
+                        <p class="mb-4">Pour toute proposition, n'hésitez pas à me contacter directement par email.</p>
                         
+                        <div class="text-center mt-5">
+                            <a href="mailto:kouicicontact@yahoo.com" class="email-btn">
+                                <i class="bi bi-envelope-fill"></i> Envoyer un email
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 p-4 p-lg-5">
                         <div class="mb-4">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="contact-icon me-3">
@@ -530,7 +522,7 @@
                                 </div>
                                 <div>
                                     <h4 class="h6 mb-0">Email</h4>
-                                    <a href="mailto:i.kouici@insta.fr" class="text-decoration-none">i.kouici@insta.fr</a>
+                                    <a href="mailto:kouicicontact@yahoo.com" class="text-decoration-none">kouicicontact@yahoo.com</a>
                                 </div>
                             </div>
                             
@@ -555,7 +547,7 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex gap-3">
+                        <div class="d-flex gap-3 justify-content-center">
                             <a href="https://github.com/votreprofil" target="_blank" class="social-link">
                                 <i class="bi bi-github"></i>
                             </a>
@@ -566,32 +558,6 @@
                                 <i class="bi bi-twitter"></i>
                             </a>
                         </div>
-                    </div>
-                    
-                    <div class="col-lg-6 p-4 p-lg-5">
-                        <form id="contactForm" method="POST">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Nom complet</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Sujet</label>
-                                <input type="text" class="form-control" id="subject" name="subject" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary px-4">Envoyer le message</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -639,7 +605,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-4">
-                    <a href="#contact" class="btn btn-outline-light mt-2">Me contacter</a>
+                    <a href="mailto:kouicicontact@yahoo.com" class="btn btn-outline-light mt-2">Me contacter</a>
                 </div>
             </div>
             
@@ -699,17 +665,6 @@
         
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Déclenche au chargement
-        
-        // Gestion du formulaire de contact
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Ici vous pourriez ajouter le code pour envoyer le formulaire
-            // Par exemple avec fetch() ou en le soumettant à un script PHP
-            
-            alert('Message envoyé avec succès ! Je vous répondrai dès que possible.');
-            this.reset();
-        });
     </script>
 </body>
 </html>
