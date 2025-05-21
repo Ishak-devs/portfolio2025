@@ -444,7 +444,7 @@
                             <p class="card-text text-muted mb-4">Application mobile de commerce électronique avec système de paiement sécurisé, gestion de catalogue et suivi des commandes.</p>
                             <div class="mt-auto">
                                 <div class="mb-3">
-                                    <span class="badge tech-badge">React Native</span>
+                                    <span class="badge tech-badge">PHP</span>
                                     <span class="badge tech-badge">Mysql</span>
                                     <span class="badge tech-badge">API base de données</span>
                                 </div>
@@ -457,6 +457,9 @@
                         </div>
                     </div>
                 </div>
+
+                
+                
                 
                 <!-- Projet 2 - ClasseSpace -->
                 <div class="col-md-6 col-lg-4">
@@ -482,7 +485,6 @@
                                 <div class="d-flex gap-3">
                                     <a href="https://projet-forum-1-pyvs.onrender.com" class="btn btn-sm btn-outline-secondary d-flex align-items-center">
                                         <i class="bi bi-github me-2">Docker</i>
-                                        <p>projet encore en developpement !</p>
                                     </a>
                                 </div>
                             </div>
@@ -551,12 +553,10 @@
                             <a href="https://github.com/votreprofil" target="_blank" class="social-link">
                                 <i class="bi bi-github"></i>
                             </a>
-                            <a href="https://linkedin.com/in/votreprofil" target="_blank" class="social-link">
+                            <a href="https://www.linkedin.com/in/ishak-kouici/" target="_blank" class="social-link">
                                 <i class="bi bi-linkedin"></i>
                             </a>
-                            <a href="https://twitter.com/votreprofil" target="_blank" class="social-link">
-                                <i class="bi bi-twitter"></i>
-                            </a>
+                           
                         </div>
                     </div>
                 </div>
@@ -572,15 +572,13 @@
                     <h3 class="footer-title h4"><span>&lt;</span>Ishak Kouici<span>/&gt;</span></h3>
                     <p class="text-muted mt-3">Développeur Full Stack passionné par la création de solutions innovantes et performantes.</p>
                     <div class="d-flex gap-3 mt-4">
-                        <a href="https://github.com/votreprofil" target="_blank" class="social-link">
+                        <a href="" target="_blank" class="social-link">
                             <i class="bi bi-github"></i>
                         </a>
-                        <a href="https://linkedin.com/in/votreprofil" target="_blank" class="social-link">
+                        <a href="https://www.linkedin.com/in/ishak-kouici/" target="_blank" class="social-link">
                             <i class="bi bi-linkedin"></i>
                         </a>
-                        <a href="https://twitter.com/votreprofil" target="_blank" class="social-link">
-                            <i class="bi bi-twitter"></i>
-                        </a>
+                       
                     </div>
                 </div>
                 
